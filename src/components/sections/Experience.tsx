@@ -104,6 +104,7 @@ function ExperienceCard({ experience, index }: { experience: ExperienceType; ind
           {/* Expandable details */}
           <button
             onClick={() => setExpanded(!expanded)}
+            aria-expanded={expanded}
             className={`w-full rounded-xl border px-4 py-3 text-left text-sm font-medium transition duration-200 ${
               expanded
                 ? 'border-emerald-400/20 bg-emerald-400/[0.04] text-emerald-300'

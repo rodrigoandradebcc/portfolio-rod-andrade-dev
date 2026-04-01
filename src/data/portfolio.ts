@@ -16,7 +16,7 @@ import mcpIcon from '../assets/mcp-icon.svg'
 export const personalInfo: PersonalInfo = {
   name: 'Rodrigo Andrade',
   title: 'Software Engineer | AI | React | React Native | Next.js | Node.js | Frontend & Mobile',
-  location: 'Campinas, São Paulo, Brasil',
+  location: 'Belém, Pará, Brasil',
   summary:
     'Software Engineer com experiência em desenvolvimento Frontend, Mobile e Full Stack. Atuação em empresas como SmartFit e RD Raia Drogasil, além de startups em fases iniciais, o que me deu uma visão ampla de ciclos de produto, desde MVP até escala. Stack principal: ReactJS, React Native, Next.js, TypeScript, Node.js e NestJS. Experiência com Azure, Firebase, REST APIs, GIT Flow e metodologias ágeis. Familiaridade com UI Design e prototipação no Figma. Atualmente utilizando LLMs (Cursor, Claude Code) e MCP no workflow de desenvolvimento, aumentando produtividade e qualidade de entrega de forma consistente.',
   email: 'rodrigoandradebcc@gmail.com',

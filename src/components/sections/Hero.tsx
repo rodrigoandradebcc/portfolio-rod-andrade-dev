@@ -14,11 +14,11 @@ import profilePhoto from "../../assets/profile-photo.webp";
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <Card className="flex h-full min-h-[210px] flex-col items-center justify-center p-6 text-center md:min-h-[245px] md:p-8">
+    <Card className="flex h-full min-h-[180px] flex-col items-start justify-start p-5 text-left md:min-h-[200px] md:p-6">
       <p className="text-[1.7rem] leading-none font-black tracking-[-0.04em] text-zinc-50 md:text-[2.1rem]">
         {value}
       </p>
-      <p className="mt-3 max-w-[16ch] text-[1.05rem] leading-[1.7] text-zinc-400 md:text-[1.2rem]">
+      <p className="mt-3 text-[1.05rem] leading-[1.7] text-zinc-400 md:text-[1.2rem]">
         {label}
       </p>
     </Card>

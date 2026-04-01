@@ -1,7 +1,9 @@
-import { Container, SectionHeader, Button, LinkedInIcon, GitHubIcon, EmailIcon } from '../ui'
+import { Container, SectionHeader, Button, LinkedInIcon, GitHubIcon, EmailIcon, WhatsAppIcon } from '../ui'
 import { personalInfo } from '../../data/portfolio'
 
 export function Contact() {
+  const whatsappUrl = `https://wa.me/55${personalInfo.phone}`
+
   return (
     <section id="contato" className="py-20">
       <Container>
@@ -15,6 +17,10 @@ export function Contact() {
           <Button href={personalInfo.linkedin}>
             <LinkedInIcon />
             LinkedIn
+          </Button>
+          <Button href={whatsappUrl} className="bg-[#25D366] text-zinc-950 hover:brightness-110">
+            <WhatsAppIcon />
+            WhatsApp
           </Button>
           {personalInfo.github && (
             <Button href={personalInfo.github} variant="secondary">
