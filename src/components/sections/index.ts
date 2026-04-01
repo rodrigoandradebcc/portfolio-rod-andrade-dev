@@ -1,0 +1,6 @@
+export { Hero } from './Hero'
+export { Resume } from './Resume'
+export { Experience } from './Experience'
+export { Skills } from './Skills'
+export { Education } from './Education'
+export { Contact } from './Contact'
