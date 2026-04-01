@@ -34,10 +34,10 @@ export function Hero() {
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.16),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.12),transparent_28%),linear-gradient(135deg,rgba(24,24,27,0.98),rgba(31,41,55,0.92))] px-4 py-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)] sm:rounded-[2.75rem] sm:px-6 sm:py-8 md:px-10 md:py-10 lg:px-14 lg:py-14">
           <div className="grid gap-8 sm:gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-start">
             {/* Left column */}
-            <div>
+            <div className="min-w-0">
               <Badge
                 variant="accent"
-                className="mb-6 max-w-full text-[0.68rem] sm:text-sm"
+                className="mb-6 flex w-full max-w-full overflow-hidden text-[0.68rem] tracking-[0.14em] sm:w-auto sm:text-sm sm:tracking-[0.2em]"
               >
                 <MapPinIcon className="mr-1.5 size-3 shrink-0" />
                 <span className="block min-w-0 truncate">
@@ -45,7 +45,7 @@ export function Hero() {
                 </span>
               </Badge>
 
-              <h1 className="text-[clamp(2.35rem,10vw,3.25rem)] leading-[0.95] font-black tracking-[-0.05em] text-zinc-50">
+              <h1 className="text-[clamp(2rem,10vw,3.25rem)] leading-[0.95] font-black tracking-[-0.05em] text-zinc-50">
                 {personalInfo.name}
               </h1>
 
@@ -55,20 +55,24 @@ export function Hero() {
                 Native e Node.js — do MVP à escala.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button href={personalInfo.linkedin}>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <Button href={personalInfo.linkedin} className="w-full">
                   <LinkedInIcon />
                   LinkedIn
                 </Button>
                 <Button
                   href={whatsappUrl}
-                  className="bg-[#25D366] text-zinc-950 hover:brightness-110"
+                  className="w-full bg-[#25D366] text-zinc-950 hover:brightness-110"
                 >
                   <WhatsAppIcon />
                   WhatsApp
                 </Button>
                 {personalInfo.github && (
-                  <Button href={personalInfo.github} variant="secondary">
+                  <Button
+                    href={personalInfo.github}
+                    variant="secondary"
+                    className="w-full"
+                  >
                     <GitHubIcon />
                     GitHub
                   </Button>
@@ -76,21 +80,28 @@ export function Hero() {
                 <Button
                   href={`mailto:${personalInfo.email}`}
                   variant="secondary"
+                  className="w-full"
                 >
                   <EmailIcon />
                   Email
                 </Button>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Badge>React + React Native</Badge>
-                <Badge>Node.js + NestJS</Badge>
-                <Badge>AI, LLMs e MCP</Badge>
+              <div className="mt-8 grid gap-3">
+                <Badge className="w-full justify-center text-[0.68rem] tracking-[0.14em] sm:w-fit sm:max-w-full sm:justify-start sm:text-xs sm:tracking-[0.2em]">
+                  React + React Native
+                </Badge>
+                <Badge className="w-full justify-center text-[0.68rem] tracking-[0.14em] sm:w-fit sm:max-w-full sm:justify-start sm:text-xs sm:tracking-[0.2em]">
+                  Node.js + NestJS
+                </Badge>
+                <Badge className="w-full justify-center text-[0.68rem] tracking-[0.14em] sm:w-fit sm:max-w-full sm:justify-start sm:text-xs sm:tracking-[0.2em]">
+                  AI, LLMs e MCP
+                </Badge>
               </div>
             </div>
 
             {/* Right column */}
-            <div className="space-y-6">
+            <div className="min-w-0 space-y-6">
               <Card hover={false} className="p-5 sm:p-8 md:p-10">
                 <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-start sm:gap-6">
                   <img

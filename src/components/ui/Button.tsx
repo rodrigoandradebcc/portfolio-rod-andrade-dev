@@ -18,7 +18,7 @@ export function Button({ children, href, variant = 'primary', className = '' }: 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition duration-200 active:scale-[0.98] ${variantStyles[variant]} ${className}`}
+      className={`inline-flex min-w-0 max-w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition duration-200 active:scale-[0.98] ${variantStyles[variant]} ${className}`}
     >
       {children}
     </a>
