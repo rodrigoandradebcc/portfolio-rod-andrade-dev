@@ -27,6 +27,10 @@ function StatCard({ value, label }: { value: string; label: string }) {
 
 export function Hero() {
   const whatsappUrl = `https://wa.me/55${personalInfo.phone}`;
+  const primaryCtaClassName =
+    "min-h-[3.6rem] w-fit max-w-full justify-start rounded-[1.35rem] px-4.5 text-[0.95rem] font-semibold tracking-[-0.02em]";
+  const secondaryCtaClassName =
+    "min-h-[3.6rem] w-fit max-w-full justify-start rounded-[1.35rem] border-white/12 bg-white/[0.04] px-4.5 text-[0.95rem] font-semibold tracking-[-0.02em] text-zinc-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] hover:border-white/18 hover:bg-white/[0.07]";
 
   return (
     <section className="border-b border-white/5 pt-28 pb-20">
@@ -55,35 +59,35 @@ export function Hero() {
                 Native e Node.js — do MVP à escala.
               </p>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                <Button href={personalInfo.linkedin} className="w-full">
-                  <LinkedInIcon className="size-8" />
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Button href={personalInfo.linkedin} className={primaryCtaClassName}>
+                  <LinkedInIcon className="size-6.5" />
                   LinkedIn
                 </Button>
                 <Button
                   href={whatsappUrl}
-                  className="w-full bg-[#25D366] text-zinc-950 hover:brightness-110"
+                  className={`${primaryCtaClassName} bg-[#25D366] text-zinc-950 hover:brightness-105`}
                 >
-                  <WhatsAppIcon className="size-8" />
+                  <WhatsAppIcon className="size-6.5" />
                   WhatsApp
                 </Button>
                 {personalInfo.github && (
                   <Button
                     href={personalInfo.github}
                     variant="secondary"
-                    className="w-full"
+                    className={secondaryCtaClassName}
                   >
-                    <GitHubIcon className="size-8" />
+                    <GitHubIcon className="size-6.5" />
                     GitHub
                   </Button>
                 )}
                 <Button
                   href={`mailto:${personalInfo.email}`}
                   variant="secondary"
-                  className="w-full"
+                  className={secondaryCtaClassName}
                 >
-                  <EmailIcon className="size-8" />
-                  Email
+                  <EmailIcon className="size-6.5" />
+                  {personalInfo.email}
                 </Button>
               </div>
 
