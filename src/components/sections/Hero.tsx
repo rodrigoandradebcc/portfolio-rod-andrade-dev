@@ -28,9 +28,9 @@ function StatCard({ value, label }: { value: string; label: string }) {
 export function Hero() {
   const whatsappUrl = `https://wa.me/55${personalInfo.phone}`;
   const primaryCtaClassName =
-    "min-h-[3.6rem] w-fit max-w-full justify-start rounded-[1.35rem] px-4.5 text-[0.95rem] font-semibold tracking-[-0.02em]";
+    "h-[46px] w-fit max-w-full justify-start rounded-[0.9rem] px-3 py-0 text-[0.85rem] font-semibold tracking-[-0.02em]";
   const secondaryCtaClassName =
-    "min-h-[3.6rem] w-fit max-w-full justify-start rounded-[1.35rem] border-white/12 bg-white/[0.04] px-4.5 text-[0.95rem] font-semibold tracking-[-0.02em] text-zinc-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] hover:border-white/18 hover:bg-white/[0.07]";
+    "h-[46px] w-fit max-w-full justify-start rounded-[0.9rem] border-white/12 bg-white/[0.04] px-3 py-0 text-[0.85rem] font-semibold tracking-[-0.02em] text-zinc-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] hover:border-white/18 hover:bg-white/[0.07]";
 
   return (
     <section className="border-b border-white/5 pt-28 pb-20">
@@ -59,16 +59,19 @@ export function Hero() {
                 Native e Node.js — do MVP à escala.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button href={personalInfo.linkedin} className={primaryCtaClassName}>
-                  <LinkedInIcon className="size-6.5" />
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button
+                  href={personalInfo.linkedin}
+                  className={primaryCtaClassName}
+                >
+                  <LinkedInIcon className="size-4" />
                   LinkedIn
                 </Button>
                 <Button
                   href={whatsappUrl}
                   className={`${primaryCtaClassName} bg-[#25D366] text-zinc-950 hover:brightness-105`}
                 >
-                  <WhatsAppIcon className="size-6.5" />
+                  <WhatsAppIcon className="size-4" />
                   WhatsApp
                 </Button>
                 {personalInfo.github && (
@@ -77,7 +80,7 @@ export function Hero() {
                     variant="secondary"
                     className={secondaryCtaClassName}
                   >
-                    <GitHubIcon className="size-6.5" />
+                    <GitHubIcon className="size-4" />
                     GitHub
                   </Button>
                 )}
@@ -86,19 +89,19 @@ export function Hero() {
                   variant="secondary"
                   className={secondaryCtaClassName}
                 >
-                  <EmailIcon className="size-6.5" />
+                  <EmailIcon className="size-4" />
                   {personalInfo.email}
                 </Button>
               </div>
 
-              <div className="mt-8 grid gap-3">
-                <Badge className="w-full justify-center text-[0.68rem] tracking-[0.14em] sm:w-fit sm:max-w-full sm:justify-start sm:text-xs sm:tracking-[0.2em]">
+              <div className="mt-8 flex flex-wrap gap-1 w-full bg-red">
+                <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
                   React + React Native
                 </Badge>
-                <Badge className="w-full justify-center text-[0.68rem] tracking-[0.14em] sm:w-fit sm:max-w-full sm:justify-start sm:text-xs sm:tracking-[0.2em]">
+                <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
                   Node.js + NestJS
                 </Badge>
-                <Badge className="w-full justify-center text-[0.68rem] tracking-[0.14em] sm:w-fit sm:max-w-full sm:justify-start sm:text-xs sm:tracking-[0.2em]">
+                <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
                   AI, LLMs e MCP
                 </Badge>
               </div>
@@ -106,7 +109,7 @@ export function Hero() {
 
             {/* Right column */}
             <div className="min-w-0 space-y-6">
-              <Card hover={false} className="p-5 sm:p-8 md:p-10">
+              <Card hover={false} className="p-4 sm:p-6 md:p-7">
                 <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-start sm:gap-6">
                   <img
                     src={profilePhoto}
@@ -123,7 +126,10 @@ export function Hero() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-4 text-left text-[1rem] leading-[1.75] text-zinc-400 sm:text-[1.05rem] sm:leading-[1.8]">
+              </Card>
+
+              <Card hover={false} className="p-4 text-left sm:p-6 md:p-7">
+                <p className="text-[1rem] leading-[1.75] text-zinc-400 sm:text-[1.05rem] sm:leading-[1.8]">
                   Formado em Ciências da Computação pelo CESUPA. Interessado em
                   times que valorizem código limpo, boas práticas e produto bem
                   construído.
