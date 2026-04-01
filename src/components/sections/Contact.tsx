@@ -15,21 +15,21 @@ export function Contact() {
 
         <div className="flex flex-wrap gap-4">
           <Button href={personalInfo.linkedin}>
-            <LinkedInIcon />
+            <LinkedInIcon className="size-8" />
             LinkedIn
           </Button>
           <Button href={whatsappUrl} className="bg-[#25D366] text-zinc-950 hover:brightness-110">
-            <WhatsAppIcon />
+            <WhatsAppIcon className="size-8" />
             WhatsApp
           </Button>
           {personalInfo.github && (
             <Button href={personalInfo.github} variant="secondary">
-              <GitHubIcon />
+              <GitHubIcon className="size-8" />
               GitHub
             </Button>
           )}
           <Button href={`mailto:${personalInfo.email}`} variant="secondary">
-            <EmailIcon />
+            <EmailIcon className="size-8" />
             {personalInfo.email}
           </Button>
         </div>

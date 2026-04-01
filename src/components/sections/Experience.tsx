@@ -72,7 +72,10 @@ function ExperienceCard({ experience, index }: { experience: ExperienceType; ind
             {experience.period} · {experience.duration}
           </p>
           <p className="text-xs text-zinc-500">{experience.location}</p>
-          <Badge className="mt-2">{experience.stack.length} stacks</Badge>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {experience.tag ? <Badge variant="accent">{experience.tag}</Badge> : null}
+            <Badge>{experience.stack.length} stacks</Badge>
+          </div>
         </div>
 
         {/* Right content */}

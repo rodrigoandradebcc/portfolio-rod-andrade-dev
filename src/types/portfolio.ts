@@ -15,6 +15,7 @@ export interface Experience {
   period: string
   duration: string
   location: string
+  tag?: string
   description: string
   highlights: string[]
   stack: string[]

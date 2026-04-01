@@ -75,6 +75,7 @@ export const experiences: Experience[] = [
     period: 'Mar 2023 — Mai 2023',
     duration: '3 meses',
     location: 'Remoto',
+    tag: 'Freelancer',
     description:
       'Desenvolvimento Frontend para a DoIT, startup britânica selecionada como plataforma oficial de uma campanha do Rei Charles para incentivo ao voluntariado no Reino Unido.',
     highlights: [
@@ -127,6 +128,7 @@ export const experiences: Experience[] = [
     period: 'Jun 2021 — Dez 2021',
     duration: '7 meses',
     location: 'Remoto',
+    tag: 'Freelancer',
     description:
       'Desenvolvimento Full Stack em startup de saúde, atuando no app mobile, landing page e ferramenta administrativa. Participei das concepções de UI Design da ferramenta administrativa.',
     highlights: [

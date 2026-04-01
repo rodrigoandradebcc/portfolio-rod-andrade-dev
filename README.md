@@ -1,75 +1,109 @@
-# React + TypeScript + Vite
+# Rodrigo Andrade | Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio pessoal desenvolvido para apresentar experiência profissional, stack principal, formação e canais de contato de Rodrigo Andrade.
 
-Currently, two official plugins are available:
+A aplicação foi construída com foco em performance, manutenção simples e atualização rápida de conteúdo. Os dados do portfólio ficam centralizados em um único arquivo, facilitando ajustes em experiências, skills e informações pessoais sem espalhar conteúdo pela interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS v4
+- ESLint
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Seções do projeto
 
-Note: This will impact Vite dev & build performances.
+- `Hero`: apresentação principal com resumo e CTAs
+- `Resume`: visão geral de competências e posicionamento profissional
+- `Experience`: histórico profissional com destaques, stacks e logos
+- `Skills`: principais tecnologias e especialidades
+- `Education`: formação acadêmica e complementar
+- `Contact`: links de contato e redes
 
-## Expanding the ESLint configuration
+## Estrutura
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+  assets/                # imagens e logos
+  components/
+    layout/              # header e footer
+    sections/            # seções principais da página
+    ui/                  # componentes reutilizáveis
+  data/
+    portfolio.ts         # conteúdo central do portfólio
+  types/
+    portfolio.ts         # tipagens do domínio
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Como rodar localmente
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Pré-requisitos
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js 20+ recomendado
+- npm
+
+### Instalação
+
+```bash
+npm install
 ```
+
+### Ambiente de desenvolvimento
+
+```bash
+npm run dev
+```
+
+O Vite exibirá a URL local no terminal, normalmente `http://localhost:5173`.
+
+## Scripts
+
+```bash
+npm run dev      # inicia o ambiente de desenvolvimento
+npm run build    # gera o build de produção
+npm run preview  # sobe o build localmente para conferência
+npm run lint     # executa o lint
+```
+
+## Personalização rápida
+
+O ponto principal de edição é o arquivo [`src/data/portfolio.ts`](./src/data/portfolio.ts).
+
+Nele você pode alterar:
+
+- dados pessoais
+- experiências profissionais
+- skills
+- formação
+- idiomas
+- estatísticas e navegação
+
+Para ajustes visuais, os arquivos mais relevantes são:
+
+- [`src/index.css`](./src/index.css)
+- [`src/components/ui`](./src/components/ui)
+- [`src/components/sections`](./src/components/sections)
+
+## Build de produção
+
+```bash
+npm run build
+```
+
+Os arquivos finais serão gerados na pasta `dist/`.
+
+## Objetivo do projeto
+
+Este portfólio foi pensado para comunicar:
+
+- experiência com produtos digitais ponta a ponta
+- especialidade em React, React Native, Next.js e Node.js
+- atuação em frontend, mobile e full stack
+- familiaridade com design systems, UX e workflows com IA
+
+## Contato
+
+- LinkedIn: [linkedin.com/in/rodandradebcc](https://www.linkedin.com/in/rodandradebcc)
+- GitHub: [github.com/rodandradebcc](https://github.com/rodandradebcc)
+- Email: [rodrigoandradebcc@gmail.com](mailto:rodrigoandradebcc@gmail.com)

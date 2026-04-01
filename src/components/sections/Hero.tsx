@@ -57,14 +57,14 @@ export function Hero() {
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 <Button href={personalInfo.linkedin} className="w-full">
-                  <LinkedInIcon />
+                  <LinkedInIcon className="size-8" />
                   LinkedIn
                 </Button>
                 <Button
                   href={whatsappUrl}
                   className="w-full bg-[#25D366] text-zinc-950 hover:brightness-110"
                 >
-                  <WhatsAppIcon />
+                  <WhatsAppIcon className="size-8" />
                   WhatsApp
                 </Button>
                 {personalInfo.github && (
@@ -73,7 +73,7 @@ export function Hero() {
                     variant="secondary"
                     className="w-full"
                   >
-                    <GitHubIcon />
+                    <GitHubIcon className="size-8" />
                     GitHub
                   </Button>
                 )}
@@ -82,7 +82,7 @@ export function Hero() {
                   variant="secondary"
                   className="w-full"
                 >
-                  <EmailIcon />
+                  <EmailIcon className="size-8" />
                   Email
                 </Button>
               </div>
