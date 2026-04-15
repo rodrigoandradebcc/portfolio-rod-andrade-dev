@@ -19,7 +19,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-3 text-sm font-medium text-zinc-400 transition duration-200 hover:bg-white/5 hover:text-zinc-100"
+              className="rounded-full px-4 py-3 text-sm font-medium text-zinc-400 transition duration-200 hover:scale-[1.02] hover:bg-white/5 hover:text-zinc-100"
             >
               {item.label}
             </a>
