@@ -10,7 +10,7 @@ import {
   WhatsAppIcon,
 } from "../ui";
 import { personalInfo, stats } from "../../data/portfolio";
-import profilePhoto from "../../assets/profile-photo.webp";
+import profilePhoto from "../../assets/profile-photo.png";
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
