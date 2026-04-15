@@ -126,7 +126,7 @@ export function Hero() {
                     <img
                       src={profilePhoto}
                       alt={`Foto de perfil de ${personalInfo.name}`}
-                      className="h-46 w-full max-w-[11.5rem] shrink-0 self-start rounded-[2rem] border border-white/10 object-cover object-center shadow-[0_24px_50px_rgba(0,0,0,0.32)] transition duration-300 hover:scale-[1.03] sm:w-42"
+                      className="h-46 w-full max-w-[11.5rem] shrink-0 self-start rounded-[2rem] border border-white/10 object-cover object-top shadow-[0_24px_50px_rgba(0,0,0,0.32)] transition duration-300 hover:scale-[1.03] sm:w-42"
                     />
                     <div className="min-w-0 flex-1 text-left">
                       <p className="text-[1.05rem] leading-tight font-bold tracking-[-0.03em] text-zinc-50 sm:whitespace-nowrap md:text-[1.2rem]">
