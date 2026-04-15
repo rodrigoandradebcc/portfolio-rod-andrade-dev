@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Container, SectionHeader, Badge } from '../ui'
+import { Container, SectionHeader, Badge, AnimateIn } from '../ui'
 import { experiences } from '../../data/portfolio'
 import type { Experience as ExperienceType } from '../../types/portfolio'
 
@@ -134,14 +134,18 @@ export function Experience() {
   return (
     <section id="experiencia" className="border-b border-white/5 py-20">
       <Container>
-        <SectionHeader
-          label="Experiência"
-          title="Trajetória focada em produto, escala e qualidade de engenharia"
-        />
+        <AnimateIn delay={0}>
+          <SectionHeader
+            label="Experiência"
+            title="Trajetória focada em produto, escala e qualidade de engenharia"
+          />
+        </AnimateIn>
 
         <div className="space-y-6">
           {experiences.map((exp, i) => (
-            <ExperienceCard key={exp.company} experience={exp} index={i} />
+            <AnimateIn key={exp.company} delay={Math.min(i + 1, 4) as 0 | 1 | 2 | 3 | 4}>
+              <ExperienceCard experience={exp} index={i} />
+            </AnimateIn>
           ))}
         </div>
       </Container>
