@@ -104,7 +104,7 @@ export function Hero() {
               </AnimateIn>
 
               <AnimateIn delay={4}>
-                <div className="mt-8 flex flex-wrap gap-1 w-full bg-red">
+                <div className="mt-8 flex flex-wrap gap-1 w-full">
                   <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
                     React + React Native
                   </Badge>
