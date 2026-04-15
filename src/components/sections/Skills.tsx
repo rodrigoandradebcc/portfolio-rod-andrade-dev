@@ -1,4 +1,4 @@
-import { Container, SectionHeader } from '../ui'
+import { Container, SectionHeader, AnimateIn } from '../ui'
 import { skills } from '../../data/portfolio'
 import type { Skill } from '../../types/portfolio'
 
@@ -45,15 +45,19 @@ export function Skills() {
   return (
     <section id="stacks" className="border-b border-white/5 py-20">
       <Container>
-        <SectionHeader
-          label="Stacks"
-          title="Stack atual e contexto de atuação"
-          description="Tecnologias que utilizo no dia a dia para entregar produtos com qualidade."
-        />
+        <AnimateIn delay={0}>
+          <SectionHeader
+            label="Stacks"
+            title="Stack atual e contexto de atuação"
+            description="Tecnologias que utilizo no dia a dia para entregar produtos com qualidade."
+          />
+        </AnimateIn>
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {skills.map((skill) => (
-            <SkillCard key={skill.name} skill={skill} />
+          {skills.map((skill, i) => (
+            <AnimateIn key={skill.name} delay={Math.min(i % 4 + 1, 4) as 0 | 1 | 2 | 3 | 4}>
+              <SkillCard skill={skill} />
+            </AnimateIn>
           ))}
         </div>
       </Container>
