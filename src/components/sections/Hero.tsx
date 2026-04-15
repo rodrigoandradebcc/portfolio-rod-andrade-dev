@@ -8,6 +8,7 @@ import {
   EmailIcon,
   MapPinIcon,
   WhatsAppIcon,
+  AnimateIn,
 } from "../ui";
 import { personalInfo, stats } from "../../data/portfolio";
 import profilePhoto from "../../assets/profile-photo.png";
@@ -39,112 +40,124 @@ export function Hero() {
           <div className="grid gap-8 sm:gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-start">
             {/* Left column */}
             <div className="min-w-0">
-              <Badge
-                variant="accent"
-                className="mb-6 flex w-full max-w-full overflow-hidden text-[0.68rem] tracking-[0.14em] sm:w-auto sm:text-sm sm:tracking-[0.2em]"
-              >
-                <MapPinIcon className="mr-1.5 size-3 shrink-0" />
-                <span className="block min-w-0 truncate">
-                  Portfolio 2026 — {personalInfo.location}
-                </span>
-              </Badge>
-
-              <h1 className="text-[clamp(2rem,10vw,3.25rem)] leading-[0.95] font-black tracking-[-0.05em] text-zinc-50">
-                {personalInfo.name}
-              </h1>
-
-              <p className="mt-5 max-w-[34rem] text-[0.98rem] leading-7 text-zinc-400 md:text-[1.25rem] md:leading-[1.65]">
-                Software Engineer com +5 anos de experiência construindo
-                produtos digitais de ponta a ponta. Especialista em React, React
-                Native e Node.js — do MVP à escala.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button
-                  href={personalInfo.linkedin}
-                  className={primaryCtaClassName}
+              <AnimateIn delay={0}>
+                <Badge
+                  variant="accent"
+                  className="mb-6 flex w-full max-w-full overflow-hidden text-[0.68rem] tracking-[0.14em] sm:w-auto sm:text-sm sm:tracking-[0.2em]"
                 >
-                  <LinkedInIcon className="size-4" />
-                  LinkedIn
-                </Button>
-                <Button
-                  href={whatsappUrl}
-                  className={`${primaryCtaClassName} bg-[#25D366] text-zinc-950 hover:brightness-105`}
-                >
-                  <WhatsAppIcon className="size-4" />
-                  WhatsApp
-                </Button>
-                {personalInfo.github && (
+                  <MapPinIcon className="mr-1.5 size-3 shrink-0" />
+                  <span className="block min-w-0 truncate">
+                    Portfolio 2026 — {personalInfo.location}
+                  </span>
+                </Badge>
+              </AnimateIn>
+
+              <AnimateIn delay={1}>
+                <h1 className="text-[clamp(2rem,10vw,3.25rem)] leading-[0.95] font-black tracking-[-0.05em] text-zinc-50">
+                  {personalInfo.name}
+                </h1>
+              </AnimateIn>
+
+              <AnimateIn delay={2}>
+                <p className="mt-5 max-w-[34rem] text-[0.98rem] leading-7 text-zinc-400 md:text-[1.25rem] md:leading-[1.65]">
+                  Software Engineer com +5 anos de experiência construindo
+                  produtos digitais de ponta a ponta. Especialista em React, React
+                  Native e Node.js — do MVP à escala.
+                </p>
+              </AnimateIn>
+
+              <AnimateIn delay={3}>
+                <div className="mt-8 flex flex-wrap gap-3">
                   <Button
-                    href={personalInfo.github}
+                    href={personalInfo.linkedin}
+                    className={primaryCtaClassName}
+                  >
+                    <LinkedInIcon className="size-4" />
+                    LinkedIn
+                  </Button>
+                  <Button
+                    href={whatsappUrl}
+                    className={`${primaryCtaClassName} bg-[#25D366] text-zinc-950 hover:brightness-105`}
+                  >
+                    <WhatsAppIcon className="size-4" />
+                    WhatsApp
+                  </Button>
+                  {personalInfo.github && (
+                    <Button
+                      href={personalInfo.github}
+                      variant="secondary"
+                      className={secondaryCtaClassName}
+                    >
+                      <GitHubIcon className="size-4" />
+                      GitHub
+                    </Button>
+                  )}
+                  <Button
+                    href={`mailto:${personalInfo.email}`}
                     variant="secondary"
                     className={secondaryCtaClassName}
                   >
-                    <GitHubIcon className="size-4" />
-                    GitHub
+                    <EmailIcon className="size-4" />
+                    {personalInfo.email}
                   </Button>
-                )}
-                <Button
-                  href={`mailto:${personalInfo.email}`}
-                  variant="secondary"
-                  className={secondaryCtaClassName}
-                >
-                  <EmailIcon className="size-4" />
-                  {personalInfo.email}
-                </Button>
-              </div>
+                </div>
+              </AnimateIn>
 
-              <div className="mt-8 flex flex-wrap gap-1 w-full bg-red">
-                <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
-                  React + React Native
-                </Badge>
-                <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
-                  Node.js + NestJS
-                </Badge>
-                <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
-                  AI, LLMs e MCP
-                </Badge>
-              </div>
+              <AnimateIn delay={4}>
+                <div className="mt-8 flex flex-wrap gap-1 w-full bg-red">
+                  <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
+                    React + React Native
+                  </Badge>
+                  <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
+                    Node.js + NestJS
+                  </Badge>
+                  <Badge className="w-fit max-w-full justify-center whitespace-nowrap text-[0.68rem] tracking-[0.14em] sm:justify-start sm:text-xs sm:tracking-[0.2em]">
+                    AI, LLMs e MCP
+                  </Badge>
+                </div>
+              </AnimateIn>
             </div>
 
             {/* Right column */}
             <div className="min-w-0 space-y-6">
-              <Card hover={false} className="p-4 sm:p-6 md:p-7">
-                <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-start sm:gap-6">
-                  <img
-                    src={profilePhoto}
-                    alt={`Foto de perfil de ${personalInfo.name}`}
-                    className="h-46 w-full max-w-[11.5rem] shrink-0 self-start rounded-[2rem] border border-white/10 object-cover object-center shadow-[0_24px_50px_rgba(0,0,0,0.32)] sm:w-42"
-                  />
-                  <div className="min-w-0 flex-1 text-left">
-                    <p className="text-[1.05rem] leading-tight font-bold tracking-[-0.03em] text-zinc-50 sm:whitespace-nowrap md:text-[1.2rem]">
-                      {personalInfo.name}
-                    </p>
-                    <p className="mt-2 text-[1rem] leading-[1.7] text-zinc-400 sm:text-[1.05rem] sm:leading-[1.75]">
-                      React, React Native, Next.js, Node.js e arquitetura de
-                      produtos digitais em escala.
-                    </p>
+              <AnimateIn delay={2}>
+                <Card hover={false} className="p-4 sm:p-6 md:p-7">
+                  <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-start sm:gap-6">
+                    <img
+                      src={profilePhoto}
+                      alt={`Foto de perfil de ${personalInfo.name}`}
+                      className="h-46 w-full max-w-[11.5rem] shrink-0 self-start rounded-[2rem] border border-white/10 object-cover object-center shadow-[0_24px_50px_rgba(0,0,0,0.32)] transition duration-300 hover:scale-[1.03] sm:w-42"
+                    />
+                    <div className="min-w-0 flex-1 text-left">
+                      <p className="text-[1.05rem] leading-tight font-bold tracking-[-0.03em] text-zinc-50 sm:whitespace-nowrap md:text-[1.2rem]">
+                        {personalInfo.name}
+                      </p>
+                      <p className="mt-2 text-[1rem] leading-[1.7] text-zinc-400 sm:text-[1.05rem] sm:leading-[1.75]">
+                        React, React Native, Next.js, Node.js e arquitetura de
+                        produtos digitais em escala.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </AnimateIn>
 
-              <Card hover={false} className="p-4 text-left sm:p-6 md:p-7">
-                <p className="text-[1rem] leading-[1.75] text-zinc-400 sm:text-[1.05rem] sm:leading-[1.8]">
-                  Formado em Ciências da Computação pelo CESUPA. Interessado em
-                  times que valorizem código limpo, boas práticas e produto bem
-                  construído.
-                </p>
-              </Card>
+              <AnimateIn delay={3}>
+                <Card hover={false} className="p-4 text-left sm:p-6 md:p-7">
+                  <p className="text-[1rem] leading-[1.75] text-zinc-400 sm:text-[1.05rem] sm:leading-[1.8]">
+                    Formado em Ciências da Computação pelo CESUPA. Interessado em
+                    times que valorizem código limpo, boas práticas e produto bem
+                    construído.
+                  </p>
+                </Card>
+              </AnimateIn>
             </div>
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {stats.map((stat) => (
-              <StatCard
-                key={stat.value}
-                value={stat.value}
-                label={stat.label}
-              />
+            {stats.map((stat, i) => (
+              <AnimateIn key={stat.value} delay={(i % 4) as 0 | 1 | 2 | 3}>
+                <StatCard value={stat.value} label={stat.label} />
+              </AnimateIn>
             ))}
           </div>
         </div>
