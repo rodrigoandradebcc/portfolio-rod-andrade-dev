@@ -1,4 +1,4 @@
-import { Container, SectionHeader } from '../ui'
+import { Container, SectionHeader, AnimateIn } from '../ui'
 import { competencies } from '../../data/portfolio'
 
 function CompetencyCard({ title, description }: { title: string; description: string }) {
@@ -16,24 +16,30 @@ export function Resume() {
   return (
     <section id="resumo" className="border-b border-white/5 py-20">
       <Container>
-        <SectionHeader
-          label="Resumo"
-          title="Experiência construindo produtos digitais com impacto real"
-          description="Atuação em empresas como SmartFit e RD Raia Drogasil, além de startups em fases iniciais. Visão ampla de ciclos de produto, desde MVP até escala."
-        />
+        <AnimateIn delay={0}>
+          <SectionHeader
+            label="Resumo"
+            title="Experiência construindo produtos digitais com impacto real"
+            description="Atuação em empresas como SmartFit e RD Raia Drogasil, além de startups em fases iniciais. Visão ampla de ciclos de produto, desde MVP até escala."
+          />
+        </AnimateIn>
 
-        <div className="mt-6 max-w-3xl text-base leading-7 text-zinc-300 md:text-lg md:leading-8">
-          <p>
-            Atualmente utilizando LLMs (Cursor, Claude Code) e MCP no workflow de
-            desenvolvimento, aumentando produtividade e qualidade de entrega de forma consistente.
-            Experiência com Azure, Firebase, REST APIs, GIT Flow e metodologias ágeis.
-            Familiaridade com UI Design e prototipação no Figma.
-          </p>
-        </div>
+        <AnimateIn delay={1}>
+          <div className="mt-6 max-w-3xl text-base leading-7 text-zinc-300 md:text-lg md:leading-8">
+            <p>
+              Atualmente utilizando LLMs (Cursor, Claude Code) e MCP no workflow de
+              desenvolvimento, aumentando produtividade e qualidade de entrega de forma consistente.
+              Experiência com Azure, Firebase, REST APIs, GIT Flow e metodologias ágeis.
+              Familiaridade com UI Design e prototipação no Figma.
+            </p>
+          </div>
+        </AnimateIn>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {competencies.map((item) => (
-            <CompetencyCard key={item.title} title={item.title} description={item.description} />
+          {competencies.map((item, i) => (
+            <AnimateIn key={item.title} delay={Math.min(i + 1, 4) as 0 | 1 | 2 | 3 | 4}>
+              <CompetencyCard title={item.title} description={item.description} />
+            </AnimateIn>
           ))}
         </div>
       </Container>
